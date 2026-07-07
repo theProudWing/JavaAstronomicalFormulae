@@ -14,11 +14,13 @@ public class JulianDayConversion {
         JulianDayConversion converter = new JulianDayConversion();
 
         double millenniumJD = converter.calculateJulianDay( LocalDate.of(2000, 1, 1));
-        System.out.println("Millennium Julian Date: " + millenniumJD);
+        System.out.println("Millennium: " + millenniumJD);
 
         double currentJD = converter.calculateJulianDay(LocalDate.now());
-        System.out.println("Current Julian Date: " + currentJD);
+        System.out.println("Current: " + currentJD);
 
+        double sputnik1JD = converter.calculateJulianDay(1957, 10, 4.81);
+        System.out.println("Launch of Sputnik 1: " + sputnik1JD);
     }
 
     public double calculateJulianDay(final int YEAR, final int MONTH, final double DAY_OF_MONTH){
@@ -31,7 +33,7 @@ public class JulianDayConversion {
         if (DAY_OF_MONTH < 10){
             dateString += "0";      // DD must be 2 digits
         }
-        dateString += DAY_OF_MONTH;
+        dateString += Double.toString(DAY_OF_MONTH).replace(".", ""); // remove . from double
 
         double dateDouble = Double.parseDouble(dateString); // Used later to check whether date is in the Gregorian Calendar
 
