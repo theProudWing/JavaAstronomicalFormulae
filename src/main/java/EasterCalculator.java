@@ -15,7 +15,7 @@ public class EasterCalculator {
     }
 
     // This method takes a Gregorian calendar 'year' as a param and prints the date of Easter Sunday within that year.
-    private void dateOfEasterSunday(final int year){
+    public void dateOfEasterSunday(final int year){
         if (year < 1583){
             System.out.println("Error: Provided year is before 1583. Please provide a year in the Gregorian Calendar.");
         }
