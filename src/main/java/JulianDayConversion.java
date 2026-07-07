@@ -48,7 +48,6 @@ public class JulianDayConversion {
         }
 
         // Base Calculation for determining Julian day
-        // TODO: Fix values that should use Integer values
         double JD = ((int)(365.25 * y) + (int)(30.6001 * (m + 1))  + DAY_OF_MONTH + 1_720_994.5);
 
         // Check whether date is in Gregorian Calendar
