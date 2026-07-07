@@ -22,14 +22,6 @@ public class JulianDayConversion {
     }
 
     public double calculateJulianDay(final int YEAR, final int MONTH, final double DAY_OF_MONTH){
-        return 0;
-    }
-
-    public double calculateJulianDay(final LocalDate date){
-        final int YEAR = date.getYear();
-        final int MONTH = date.getMonthValue();
-        final int DAY_OF_MONTH = date.getDayOfMonth();
-
         // Create a String with the format "YYYY.MMDD" that can then be converted to a double
         String dateString = YEAR + ".";
         if (MONTH < 10){
@@ -64,5 +56,13 @@ public class JulianDayConversion {
             JD += B;
         }
         return JD;
+    }
+
+    public double calculateJulianDay(final LocalDate date){
+        final int YEAR = date.getYear();
+        final int MONTH = date.getMonthValue();
+        final int DAY_OF_MONTH = date.getDayOfMonth();
+
+        return calculateJulianDay(YEAR, MONTH, DAY_OF_MONTH);
     }
 }
