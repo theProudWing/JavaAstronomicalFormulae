@@ -30,8 +30,8 @@ public class JulianDayConversion {
         System.out.println("January 27, 333 @ 12:00 : " + example3BJD);
 
         //Example of negative years - Working!
-        double negativeJD = converter.calculateJulianDay(-584, 5, 28.63);
-        System.out.println("May 28.63, -584 : " + negativeJD);
+        double bcDateJD = converter.calculateJulianDay(-584, 5, 28.63);
+        System.out.println("May 28.63, -584 : " + bcDateJD);
 
         //Converting Back from Julian Day
         LocalDate sputnikLaunch = converter.calculateDateFromJulian(sputnik1JD);
@@ -42,6 +42,9 @@ public class JulianDayConversion {
         System.out.println("Answer 1: " + answer1.toString());
         LocalDate answer2 = converter.calculateDateFromJulian(1507900.13);
         System.out.println("Answer 2: " + answer2.toString());
+
+        // A Negative Julian Day value throws an exception
+        //LocalDate negativeJD = converter.calculateDateFromJulian(-1);
 
     }
 
@@ -92,7 +95,11 @@ public class JulianDayConversion {
         return calculateJulianDay(YEAR, MONTH, DAY_OF_MONTH);
     }
 
-    public LocalDate calculateDateFromJulian(double julianDay){
+    public LocalDate calculateDateFromJulian(double julianDay) throws IllegalArgumentException{
+        if (julianDay < 0){
+            throw new IllegalArgumentException("ERROR: Method requires positive Julian Day Values");
+        }
+
         double temp = julianDay + 0.5;
         String tempString = Double.toString(temp);
 
