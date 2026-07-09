@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c4a8f2a9-522d-40ba-8132-69ee570235ac" name="Changes" comment="[Clean] Reformatted Project to separate Chapter examples and exercises from  Formulae Classes">
+    <list default="true" id="c4a8f2a9-522d-40ba-8132-69ee570235ac" name="Changes" comment="[Exercise] Chapter 3 Exercise - Time Interval">
       <change beforePath="$PROJECT_DIR$/src/main/java/Chapters/Chapter3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Chapters/Chapter3.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -124,7 +124,15 @@
       <option name="project" value="LOCAL" />
       <updated>1783592031312</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="[Exercise] Chapter 3 Exercise - Time Interval">
+      <option name="closed" value="true" />
+      <created>1783592794839</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1783592794839</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -145,6 +153,7 @@
     <MESSAGE value="[Feature] Added function to convert Julian Day values into LocalDate values" />
     <MESSAGE value="[Feature] Added Exception if attempting to use a negative param in Julian&gt;Calendar date converter." />
     <MESSAGE value="[Clean] Reformatted Project to separate Chapter examples and exercises from  Formulae Classes" />
-    <option name="LAST_COMMIT_MESSAGE" value="[Clean] Reformatted Project to separate Chapter examples and exercises from  Formulae Classes" />
+    <MESSAGE value="[Exercise] Chapter 3 Exercise - Time Interval" />
+    <option name="LAST_COMMIT_MESSAGE" value="[Exercise] Chapter 3 Exercise - Time Interval" />
   </component>
 </project>

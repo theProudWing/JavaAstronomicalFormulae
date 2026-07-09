@@ -15,7 +15,7 @@ import java.util.ArrayList;
 public class Chapter3 {
     public static void run(){
         JulianDayConverter converter = new JulianDayConverter();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd MMMM yyyy");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy MMM dd");
 
         //double millenniumJD = converter.toJulianDay(LocalDate.of(2000, 1, 1));
         //System.out.println("Millennium: " + millenniumJD);
@@ -63,7 +63,6 @@ public class Chapter3 {
         halleyJDs.add(halleyPeri_1910JD);
 
 
-
         for (int i = 0; i < 10; i++) {
             halleyJDs.add(halleyJDs.get(i) + difference);
         }
@@ -76,11 +75,9 @@ public class Chapter3 {
         // Exercise: identify the date 10_000 days after 1954 June 30.
 
         LocalDate timeIntervalExerciseDate = LocalDate.of(1954, 6, 30);
-
         double futureDateJD = converter.toJulianDay(timeIntervalExerciseDate) + 10_000;
 
         LocalDate timeIntervalExerciseDate2 = converter.fromJulianDay(futureDateJD);
-        System.out.println(timeIntervalExerciseDate2.format(formatter));
-
+        // System.out.println(timeIntervalExerciseDate2.format(formatter)); // 1981 November 15
     }
 }
