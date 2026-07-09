@@ -15,34 +15,34 @@ import java.util.ArrayList;
 public class Chapter3 {
     public static void run(){
         JulianDayConverter converter = new JulianDayConverter();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd MMMM yyyy");
 
-        /*
-        double millenniumJD = converter.calculateJulianDay( LocalDate.of(2000, 1, 1));
-        System.out.println("Millennium: " + millenniumJD);
+        //double millenniumJD = converter.toJulianDay(LocalDate.of(2000, 1, 1));
+        //System.out.println("Millennium: " + millenniumJD);
 
-        double currentJD = converter.calculateJulianDay(LocalDate.now());
-        System.out.println("Current: " + currentJD);
-        */
+        //double currentJD = converter.toJulianDay(LocalDate.now());
+        //System.out.println("Current: " + currentJD);
+
 
         //Example 3.a
-        double sputnik1JD = converter.toJulianDay(1957, 10, 4.81);
+        //double sputnik1JD = converter.toJulianDay(1957, 10, 4.81);
 
         //Example 3.b
-        double example3BJD = converter.toJulianDay(333, 1, 27.5);
+        //double example3BJD = converter.toJulianDay(333, 1, 27.5);
         //System.out.println("January 27, 333 @ 12:00 : " + example3BJD);
 
         //Example of negative years - Working!
-        double bcDateJD = converter.toJulianDay(-584, 5, 28.63);
+        //double bcDateJD = converter.toJulianDay(-584, 5, 28.63);
         //System.out.println("May 28.63, -584 : " + bcDateJD);
 
         //Converting Back from Julian Day
-        LocalDate sputnikLaunch = converter.fromJulianDay(sputnik1JD);
+        //LocalDate sputnikLaunch = converter.fromJulianDay(sputnik1JD);
         //System.out.println("Launch of Sputnik 1: " + sputnikLaunch.toString());
 
         // Exercise - Calculate the calendar dates of JD = 1842713.0, AND JD = 1507900.13
-        LocalDate answer1 = converter.fromJulianDay(1842713);
+        //LocalDate answer1 = converter.fromJulianDay(1842713);
         //System.out.println("Answer 1: " + answer1.toString());
-        LocalDate answer2 = converter.fromJulianDay(1507900.13);
+        //LocalDate answer2 = converter.fromJulianDay(1507900.13);
         //System.out.println("Answer 2: " + answer2.toString());
 
         // A Negative Julian Day value throws an exception
@@ -57,12 +57,12 @@ public class Chapter3 {
         double difference = Math.abs(halleyPeri_1910JD - halleyPeri_1835JD);
         //System.out.println(difference);
 
-        // Thus we can estimate future perihelions for Halley's comet
+        // Thus we can estimate future perihelia for Halley's comet
         // Note. that these dates are not accurate due to external factors affecting Halley's orbit
         ArrayList<Double> halleyJDs = new ArrayList<>();
         halleyJDs.add(halleyPeri_1910JD);
 
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd MMMM yyyy");
+
 
         for (int i = 0; i < 10; i++) {
             halleyJDs.add(halleyJDs.get(i) + difference);
@@ -70,7 +70,17 @@ public class Chapter3 {
         for (double halleyJD : halleyJDs){
             LocalDate halleyCalendarDate = converter.fromJulianDay(halleyJD);
             String formattedDate = halleyCalendarDate.format(formatter);
-            System.out.println(formattedDate);
+            //System.out.println(formattedDate);
         }
+
+        // Exercise: identify the date 10_000 days after 1954 June 30.
+
+        LocalDate timeIntervalExerciseDate = LocalDate.of(1954, 6, 30);
+
+        double futureDateJD = converter.toJulianDay(timeIntervalExerciseDate) + 10_000;
+
+        LocalDate timeIntervalExerciseDate2 = converter.fromJulianDay(futureDateJD);
+        System.out.println(timeIntervalExerciseDate2.format(formatter));
+
     }
 }
