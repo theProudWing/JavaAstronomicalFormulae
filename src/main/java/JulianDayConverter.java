@@ -8,47 +8,9 @@ package main.java;
 
 import java.time.LocalDate;
 
-public class JulianDayConversion {
+public class JulianDayConverter {
 
-    public static void main(String[] args){
-        JulianDayConversion converter = new JulianDayConversion();
-
-        /*
-        double millenniumJD = converter.calculateJulianDay( LocalDate.of(2000, 1, 1));
-        System.out.println("Millennium: " + millenniumJD);
-
-        double currentJD = converter.calculateJulianDay(LocalDate.now());
-        System.out.println("Current: " + currentJD);
-        */
-
-        //Example 3.a
-        double sputnik1JD = converter.calculateJulianDay(1957, 10, 4.81);
-
-
-        //Example 3.b
-        double example3BJD = converter.calculateJulianDay(333, 1, 27.5);
-        System.out.println("January 27, 333 @ 12:00 : " + example3BJD);
-
-        //Example of negative years - Working!
-        double bcDateJD = converter.calculateJulianDay(-584, 5, 28.63);
-        System.out.println("May 28.63, -584 : " + bcDateJD);
-
-        //Converting Back from Julian Day
-        LocalDate sputnikLaunch = converter.calculateDateFromJulian(sputnik1JD);
-        System.out.println("Launch of Sputnik 1: " + sputnikLaunch.toString());
-
-        // Exercise - Calculate the calendar dates of JD = 1842713.0, AND JD = 1507900.13
-        LocalDate answer1 = converter.calculateDateFromJulian(1842713);
-        System.out.println("Answer 1: " + answer1.toString());
-        LocalDate answer2 = converter.calculateDateFromJulian(1507900.13);
-        System.out.println("Answer 2: " + answer2.toString());
-
-        // A Negative Julian Day value throws an exception
-        //LocalDate negativeJD = converter.calculateDateFromJulian(-1);
-
-    }
-
-    public double calculateJulianDay(final int year, final int month, final double dayOfMonth){
+    public double toJulianDay(final int year, final int month, final double dayOfMonth) {
         //TODO: Throw an exception if provided date is outside of the calculable range
 
         // Create a String with the format "YYYY.MMDDdd"
@@ -87,15 +49,15 @@ public class JulianDayConversion {
         return JD;
     }
 
-    public double calculateJulianDay(final LocalDate date){
+    public double toJulianDay(final LocalDate date){
         final int YEAR = date.getYear();
         final int MONTH = date.getMonthValue();
         final int DAY_OF_MONTH = date.getDayOfMonth();
 
-        return calculateJulianDay(YEAR, MONTH, DAY_OF_MONTH);
+        return toJulianDay(YEAR, MONTH, DAY_OF_MONTH);
     }
 
-    public LocalDate calculateDateFromJulian(double julianDay) throws IllegalArgumentException{
+    public LocalDate fromJulianDay(final double julianDay) throws IllegalArgumentException {
         if (julianDay < 0){
             throw new IllegalArgumentException("ERROR: Method requires positive Julian Day Values");
         }
