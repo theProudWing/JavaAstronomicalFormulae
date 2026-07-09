@@ -8,7 +8,7 @@ package main.java;
 
 import java.time.LocalDate;
 
-public class JulianDayConverter {
+public class JulianDayCalculator {
 
     public double toJulianDay(final int year, final int month, final double dayOfMonth) {
         //TODO: Throw an exception if provided date is outside of the calculable range
@@ -86,6 +86,23 @@ public class JulianDayConverter {
         int year = month > 2 ? C - 4716 : C - 4715;
 
         return LocalDate.of(year, month, (int)dayOfMonth);
+    }
+    public String dayOfTheWeekJD(final double julianDay){
+        double jdFloor = Math.floor(julianDay); // Remove any decimal values i.e., reset to 12:00
+        double jd = jdFloor + 0.5; // set to 0hr i.e., 00:00
+
+        int remainder = (int)((jd + 1.5) % 7);
+
+        return switch (remainder) {
+            case 0 -> "Sunday";
+            case 1 -> "Monday";
+            case 2 -> "Tuesday";
+            case 3 -> "Wednesday";
+            case 4 -> "Thursday";
+            case 5 -> "Friday";
+            case 6 -> "Saturday";
+            default -> "ERROR";
+        };
     }
 
 }
