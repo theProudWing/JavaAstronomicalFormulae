@@ -80,4 +80,16 @@ public class Chapter3 {
         LocalDate timeIntervalExerciseDate2 = converter.fromJulianDay(futureDateJD);
         // System.out.println(timeIntervalExerciseDate2.format(formatter)); // 1981 November 15
     }
+    //  A leap year is any year divisible by 4, except years also divisible by 100, which are only leap years if also
+    //  divisible by 400. Therefore, 1600, 2000, 2012, and 2024 are all leap years while 1800, 1900, and 1901 are not.
+
+    public static boolean leapYearCalculator(int year){
+        if (year % 4 == 0){
+            if (year % 100 == 0){
+                return year % 400 == 0;
+            }
+            return true;
+        }
+        return false;
+    }
 }
