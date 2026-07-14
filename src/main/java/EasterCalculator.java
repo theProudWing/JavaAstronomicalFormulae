@@ -58,16 +58,15 @@ public class EasterCalculator {
         };
     }
     public String formattedOrdinalNumber(final int number){
-        String numberString = Integer.toString(number);
-        String suffix = "th";
-        int finalDigit = Character.getNumericValue(numberString.charAt(numberString.length() - 1));
-        suffix = switch (finalDigit) {
-            case 1 -> "st";
-            case 2 -> "nd";
-            case 3 -> "rd";
-            default -> suffix;
-        };
-        return numberString + suffix;
+        String suffix = switch (number % 100){
+            case 11, 12, 13 -> "th";
+            default -> switch (number % 10){
+                case 1 -> "st";
+                case 2 -> "nd";
+                case 3 -> "rd";
+                default -> "th";
+            } ;
+        } ;
+        return number + suffix;
     }
-
 }

@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c4a8f2a9-522d-40ba-8132-69ee570235ac" name="Changes" comment="[Testing] Added JUnit 5 to Project and configured leap year tests.">
-      <change afterPath="$PROJECT_DIR$/test/main/java/JulianDayCalculatorTests.java" afterDir="false" />
+    <list default="true" id="c4a8f2a9-522d-40ba-8132-69ee570235ac" name="Changes" comment="[Bug] Fixed issue with displaying ordinal values for numbers ending with 11, 12, and 13.">
+      <change afterPath="$PROJECT_DIR$/test/main/java/OrdinalNumberTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Chapters/Chapter3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Chapters/Chapter3.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/JulianDayConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/JulianDayCalculator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/main/java/Chapters/LeapYearTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/main/java/Chapters/LeapYearTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/EasterCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/EasterCalculator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,6 +57,8 @@
     "Downloaded.Files.Path.Enabled": "false",
     "JUnit.JUnitTests.executor": "Run",
     "JUnit.JulianDayCalculatorTests.testAccurateDaysOfWeek.executor": "Run",
+    "JUnit.JulianDayCalculatorTests.testCorrectDaysOfWeek.executor": "Run",
+    "JUnit.OrdinalNumberTests.formattedOrdinalNumber.executor": "Run",
     "Repository.Attach.Annotations": "false",
     "Repository.Attach.JavaDocs": "false",
     "Repository.Attach.Sources": "false",
@@ -88,7 +88,7 @@
       <recent name="main.java.Chapters" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.JulianDayCalculatorTests.testCorrectDaysOfWeek">
+  <component name="RunManager" selected="JUnit.OrdinalNumberTests.formattedOrdinalNumber">
     <configuration name="Main Class" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="main.java.Main" />
       <module name="AstronomicalFormulae" />
@@ -138,14 +138,32 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="OrdinalNumberTests.formattedOrdinalNumber" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="AstronomicalFormulae" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main.java.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="main.java" />
+      <option name="MAIN_CLASS_NAME" value="main.java.OrdinalNumberTests" />
+      <option name="METHOD_NAME" value="formattedOrdinalNumber" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Application.Main Class" />
       <item itemvalue="JUnit.JUnitTests" />
+      <item itemvalue="JUnit.OrdinalNumberTests.formattedOrdinalNumber" />
       <item itemvalue="JUnit.JulianDayCalculatorTests.testAccurateDaysOfWeek" />
       <item itemvalue="JUnit.JulianDayCalculatorTests.testCorrectDaysOfWeek" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.OrdinalNumberTests.formattedOrdinalNumber" />
         <item itemvalue="JUnit.JulianDayCalculatorTests.testCorrectDaysOfWeek" />
         <item itemvalue="JUnit.JulianDayCalculatorTests.testAccurateDaysOfWeek" />
       </list>
@@ -240,7 +258,23 @@
       <option name="project" value="LOCAL" />
       <updated>1783604886119</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="[Feature] Added method to determine weekday from Julian Day">
+      <option name="closed" value="true" />
+      <created>1783607924860</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1783607924860</updated>
+    </task>
+    <task id="LOCAL-00012" summary="[Testing] Added Tests for Julian Day weekday calculations">
+      <option name="closed" value="true" />
+      <created>1783607982523</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1783607982523</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -265,17 +299,9 @@
     <MESSAGE value="[Clean] Changed DateTime format" />
     <MESSAGE value="[Feature] Added Method for calculating leap years" />
     <MESSAGE value="[Testing] Added JUnit 5 to Project and configured leap year tests." />
-    <option name="LAST_COMMIT_MESSAGE" value="[Testing] Added JUnit 5 to Project and configured leap year tests." />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/test/main/java/Chapters/LeapYearTests.java</url>
-          <line>12</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="[Feature] Added method to determine weekday from Julian Day" />
+    <MESSAGE value="[Testing] Added Tests for Julian Day weekday calculations" />
+    <MESSAGE value="[Bug] Fixed issue with displaying ordinal values for numbers ending with 11, 12, and 13." />
+    <option name="LAST_COMMIT_MESSAGE" value="[Bug] Fixed issue with displaying ordinal values for numbers ending with 11, 12, and 13." />
   </component>
 </project>
